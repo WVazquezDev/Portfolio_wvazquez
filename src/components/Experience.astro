@@ -3,10 +3,10 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
-    date: "Actualmente",
-    title: "Página Web de InfinetCloud",
+    date: "Junio 2024 - Actualidad",
+    title: "Programador - InfinetCloud",
     description:
-      "Página Web de InfinetCloud desarrollada con Astro con el proposito de presentar la empresa e informar los trabajos que esta realiza. Como backend para el envio de formularios se utilzó NodeJs",
+      "Actualmente colaboro como desarrollador en InfinetCloud, una empresa del sector de telecomunicaciones, donde participo en la mejora de procesos internos mediante tecnologías como FileMaker y Node.js. Además, contribuí al desarrollo de su sitio web corporativo para fortalecer su presencia digital.",
     link: "https://www.infinetcloud.mx/",
   },
 ];
@@ -15,7 +15,7 @@ const EXPERIENCE = [
 <ol class="relative border-s border-default">
   {
     EXPERIENCE.map((experiencie) => (
-      <li class="mb-10 ms-4">
+      <li class="mb-10 ms-4 ml-3">
         <ExperienceItem {...experiencie} />
       </li>
     ))

@@ -2,13 +2,14 @@
 import "../styles/global.css";
 import "@fontsource-variable/onest";
 import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
 
 interface Props {
-  title: string,
-  description: string
+  title: string;
+  description: string;
 }
 
-const {title, description} = Astro.props
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,11 +24,16 @@ const {title, description} = Astro.props
   </head>
   <body>
     <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="bglight absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <div
+      class="bgdark absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 
@@ -56,11 +62,33 @@ const {title, description} = Astro.props
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
+    scroll-behavior: smooth;
   }
   body {
-    background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: white;
+    }
+    .bglight {
+      display: none;
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    body {
+      color: black;
+    }
+    .bgdark {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 </style>
