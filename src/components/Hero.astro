@@ -1,24 +1,43 @@
 ---
 import Badges from "./ui/Badges.astro";
+import SocialPill from "./ui/SocialPill.astro";
+
+import GitHubIcon from "./icons/GitHub.astro";
+import MailIcon from "./icons/Mail.astro";
 ---
 
-<section class="lg:w-3xl mx-auto py-44">
-  <h1
-    class="text-black text-4xl font-bold flex flex-row justify-center gap-x-4 pb-10"
+<h1
+  class="text-black text-4xl font-bold flex flex-row justify-center gap-x-4 pb-10"
+>
+  👋 ¡Hola! Soy William Vazquez <div class="flex justify-center items-center">
+    <Badges>Actualmente trabajando</Badges>
+  </div>
+</h1>
+<h2 class="text-2xl text-wrap leading-normal">
+  <span class="font-bold">Ingeniero de Software</span>
+  <span class="opacity-75">originario de</span>
+  <span class="text-green-600/90 font-bold">México 🇲🇽</span>
+  <span class="opacity-75"
+    >, con pasión por crear soluciones digitales funcionales. Actualmente
+    trabajo como programador en</span
   >
-    👋 ¡Hola! Soy William Vazquez <div class="flex justify-center items-center">
-      <Badges>Actualmente trabajando</Badges>
-    </div>
-  </h1>
-  <h2 class="text-2xl text-wrap leading-normal">
-    <span class="font-bold">Ingeniero de Software</span>
-    originario de México 🇲🇽, con pasión por crear soluciones digitales funcionales.
-    Actualmente trabajo como programador en <a
-      class="hover:underline font-bold"
-      href="https://www.infinetcloud.mx/"
-      target="_blank"
-      rel="noreferrer">InfinetCloud</a
-    >, donde participo activamente en el desarrollo y mejora de proyectos.
-  </h2>
-</section>
-<ul></ul>
+  <a
+    class="hover:underline font-bold"
+    href="https://www.infinetcloud.mx/"
+    target="_blank"
+    rel="noreferrer">InfinetCloud</a
+  >
+  <span class="opacity-75"
+    >, donde participo activamente en el desarrollo y mejora de proyectos.</span
+  >
+</h2>
+<nav class="flex gap-x-4 mt-8">
+  <SocialPill href="https://github.com/WVazquezDev">
+    <GitHubIcon class="w-6 h-6" />
+    GitHub
+  </SocialPill>
+  <SocialPill href="mailto:wvazquez0dev@gmail.com">
+    <MailIcon class="w-6 h-6" />
+    wvazquez0dev@gmail.com
+  </SocialPill>
+</nav>

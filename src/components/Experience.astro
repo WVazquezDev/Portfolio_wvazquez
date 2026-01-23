@@ -1,0 +1,23 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente",
+    title: "Página Web de InfinetCloud",
+    description:
+      "Página Web de InfinetCloud desarrollada con Astro con el proposito de presentar la empresa e informar los trabajos que esta realiza. Como backend para el envio de formularios se utilzó NodeJs",
+    link: "https://www.infinetcloud.mx/",
+  },
+];
+---
+
+<ol class="relative border-s border-default">
+  {
+    EXPERIENCE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
