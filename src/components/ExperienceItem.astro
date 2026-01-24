@@ -10,10 +10,10 @@ const { title, description, date, link } = Astro.props;
 ---
 
 <span
-  class="calendarIcon absolute flex items-center justify-center w-6 h-6 rounded-full -start-3 ring-2 ring-buffer"
+  class="calendarIcon absolute flex items-center justify-center w-6 h-6 rounded-full -start-3 ring-2 ring-fuchsia-800"
 >
   <svg
-    class="w-3 h-3 text-fg-brand-strong"
+    class="w-3 h-3 text-fuchsia-800"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -30,11 +30,11 @@ const { title, description, date, link } = Astro.props;
   >
 </span>
 <time
-  class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded"
+  class="bg-fuchsia-100 border border-fuchsia-800 text-fuchsia-800 text-xs font-medium px-1.5 py-0.5 ml-3 rounded"
   >{date}</time
 >
 <h3
-  class="flex items-center mb-1 text-lg font-semibold text-yellow-400/90 mt-4"
+  class="flex items-center mb-1 text-lg font-semibold text-fuchsia-800 mt-4 text-balance"
 >
   {title}
 </h3>

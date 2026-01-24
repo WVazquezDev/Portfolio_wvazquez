@@ -1,0 +1,40 @@
+---
+const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "bg-black/90 text-white",
+        icon: '/Astro_darks.svg'
+    }
+}
+
+const PROJECTS = [
+  {
+    title: "Página Web - InfinetCloud",
+    description:
+      "InfinetCloud te brinda internet satelital y fibra óptica con gran estabilidad. En InfinetMac reparamos tus equipos Apple de forma profesional.",
+    links: "https://www.infinetcloud.mx/",
+    github: "#",
+    image: "/projects/infinetcloud.webp",
+    tags: [TAGS.ASTRO, "CSS", "JavaScript", "Node.js"],
+  },
+];
+---
+
+{
+  PROJECTS.map((project) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-fuchsia-800 mb-2">{project.title}</h3>
+      <p class="text-lg mb-4 text-pretty">{project.description}</p>
+      <ul>
+        {project.tags.map((tag) => (
+          <li>{tag}</li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl dark:shadow-white/10 light:shadow-black/10"
+        src={project.image}
+        alt={`Captura de pantalla del proyecto ${project.image}`}
+      />
+    </article>
+  ))
+}
