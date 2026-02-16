@@ -4,9 +4,13 @@ import Section from "../components/ui/Section.astro";
 import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Contact from "../components/Contact.astro";
 
 import Briefcase from "../components/icons/Briefcase.astro";
 import CodeIcon from "../components/icons/CodeIcon.astro";
+import UserIcon from "../components/icons/UserIcon.astro";
+import ContactIcon from "../components/icons/ContactIcon.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -17,7 +21,7 @@ import CodeIcon from "../components/icons/CodeIcon.astro";
   description="Contrata a William para crear tu Página web. Desarrollador Web. Especializado en crear aplicaciones."
 >
   <main class="px-5 lg:px-0">
-    <Section class="py-44 pb-24">
+    <Section id="inicio" class="py-44 pb-24">
       <Hero />
     </Section>
     <Section class="pb-24" id="experiencia">
@@ -27,12 +31,32 @@ import CodeIcon from "../components/icons/CodeIcon.astro";
       </h2>
       <Experience />
     </Section>
-    <Section id="proyectos">
+    <Section class="pb-24" id="proyectos">
       <h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
         <CodeIcon class="size-7" />
         Proyectos
       </h2>
-      <Projects />
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-5">
+        <Projects />
+      </div>
+    </Section>
+    <Section class="pb-24" id="sobre-mi">
+      <h2
+        class="text-3xl text-center font-semibold mb-6 flex items-center justify-center gap-x-3"
+      >
+        <UserIcon class="size-7" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+    </Section>
+    <Section id="contacto" class="pb-24">
+      <h2
+        class="text-3xl text-center font-semibold mb-6 flex items-center justify-center gap-x-3"
+      >
+        <ContactIcon class="size-7" />
+        Contacto
+      </h2>
+      <Contact />
     </Section>
   </main>
 </Layout>

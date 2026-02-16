@@ -1,0 +1,59 @@
+<div class="max-w-xl mx-auto">
+  <form action="#">
+    <div class="contentInput">
+      <label for="name" id="name">Nombre</label>
+      <input type="text" name="name" placeholder="ej. Roberto Garcia" />
+    </div>
+    <div class="contentInput">
+      <label for="email" id="email">Email</label>
+      <input type="email" name="email" placeholder="ej. tucorreo@ejemplo.com" />
+    </div>
+    <div class="contentInput">
+      <label for="subject" id="subject">Sujeto</label>
+      <input
+        type="text"
+        name="subject"
+        placeholder="ej. Solucion para mi negocio..."
+      />
+    </div>
+    <div class="contentInput">
+      <label for="description" id="description">Tu mensaje</label>
+      <textarea
+        name="description"
+        id="description"
+        rows="5"
+        placeholder="ej. Mi negocio consiste en..."></textarea>
+    </div>
+    <div class="contentInput pt-5">
+      <button
+        id="btnSubmit"
+        class="px-4 py-2 bg-fuchsia-600 hover:bg-fuchsia-700 cursor-pointer rounded"
+        >Enviar</button
+      >
+    </div>
+  </form>
+</div>
+
+<style>
+  .contentInput {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  label {
+    padding: 0 16px;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  input,
+  textarea {
+    padding: 8px 16px;
+    border: 1px solid oklch(74% 0.238 322.16);
+    border-radius: 3pt;
+    background-color: #fff;
+    color: black;
+    resize: none;
+  }
+</style>

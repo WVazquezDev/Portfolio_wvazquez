@@ -1,7 +1,33 @@
+/* src/styles/global.css */
 @import "tailwindcss";
 
 @layer components {
   .nav-header {
-    @apply bg-white/50 dark:bg-gray-800/90;
+    --nav-bg: 255 255 255; /* light */
+    background-color: rgb(var(--nav-bg) / 0);
+    animation: nav-shadow 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  .dark .nav-header {
+    --nav-bg: 31 41 55; /* gray-800 */
+  }
+
+  @keyframes nav-shadow {
+    from {
+      background-color: rgb(var(--nav-bg) / 0);
+      box-shadow: none;
+      backdrop-filter: blur(0px);
+      outline: 0 solid transparent;
+    }
+    to {
+      background-color: rgb(var(--nav-bg) / 0.1); /* ajusta opacidad final */
+      box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(12px);
+      outline: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 }
