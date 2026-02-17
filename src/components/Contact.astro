@@ -1,5 +1,5 @@
 <div class="max-w-xl mx-auto">
-  <form action="#">
+  <form id="contactForm" action="#">
     <div class="contentInput">
       <label for="name" id="name">Nombre</label>
       <input type="text" name="name" placeholder="ej. Roberto Garcia" />
@@ -19,7 +19,7 @@
     <div class="contentInput">
       <label for="description" id="description">Tu mensaje</label>
       <textarea
-        name="description"
+        name="message"
         id="description"
         rows="5"
         placeholder="ej. Mi negocio consiste en..."></textarea>
@@ -57,3 +57,35 @@
     resize: none;
   }
 </style>
+
+<script>
+  const form = document.getElementById("contactForm") as HTMLFormElement;
+
+  const txtName = document.getElementById("name") as HTMLInputElement;
+  const txtEmail = document.getElementById("email") as HTMLInputElement;
+  const txtSubject = document.getElementById("subject") as HTMLInputElement;
+  const txtMessage = document.getElementById(
+    "description",
+  ) as HTMLTextAreaElement;
+
+  const btnSubmit = document.getElementById("btnSubmit");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fd = new FormData(form);
+    const payload = Object.fromEntries(fd.entries());
+
+    console.log("payload", payload);
+
+    const response = await fetch("http://localhost:3000/mail/sendMailWV", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) throw new Error(`Response status: ${response.status}`);
+
+    console.log(await response.json());
+  });
+</script>
