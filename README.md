@@ -1,46 +1,88 @@
-# Astro Starter Kit: Basics
+# Portfolio WVazquez
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Sitio web de portafolio personal construido con Astro y Tailwind CSS.
+Muestra experiencia profesional, proyectos destacados, perfil personal y un formulario de contacto.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Resumen
 
-## 🚀 Project Structure
+Este repositorio contiene un portafolio orientado a presentar el perfil de William Vazquez como Ingeniero de Software.
+El sitio esta compuesto por secciones reutilizables y una arquitectura simple para facilitar mantenimiento y escalabilidad.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Tecnologias principales
+
+- Astro 5
+- Tailwind CSS 4 (via `@tailwindcss/vite`)
+- TypeScript (configuracion base)
+- pnpm como gestor de paquetes
+
+## Caracteristicas
+
+- Landing de presentacion con informacion profesional.
+- Seccion de experiencia laboral.
+- Seccion de proyectos con stack tecnologico por proyecto.
+- Seccion "Sobre mi".
+- Formulario de contacto con envio via `fetch` a un servicio externo/local.
+- Layout reutilizable con `Header` y `Footer`.
+
+## Estructura del proyecto
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+Portfolio_wvazquez/
+|- public/
+|  |- projects/
+|  |- william_photo.webp
+|  |- favicon.svg
+|- src/
+|  |- components/
+|  |  |- layout/
+|  |  |- icons/
+|  |  |- ui/
+|  |- layouts/
+|  |- pages/
+|  |- styles/
+|- astro.config.mjs
+|- package.json
+|- pnpm-lock.yaml
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Requisitos
 
-## 🧞 Commands
+- Node.js 20 o superior (recomendado)
+- pnpm 10+
 
-All commands are run from the root of the project, from a terminal:
+## Instalacion y uso local
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+```bash
+pnpm install
+pnpm dev
+```
 
-## 👀 Want to learn more?
+El sitio quedara disponible en `http://localhost:4321`.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Scripts disponibles
+
+- `pnpm dev`: inicia el servidor de desarrollo.
+- `pnpm build`: genera la version de produccion en `dist/`.
+- `pnpm preview`: sirve localmente la build de produccion.
+- `pnpm astro`: ejecuta comandos de Astro CLI.
+
+## Formulario de contacto
+
+El formulario en `src/components/Contact.astro` envia datos a:
+
+- `http://localhost:3000/mail/sendMailWV`
+
+Para que funcione correctamente en local o produccion, debes tener disponible ese servicio o actualizar la URL del endpoint segun tu backend.
+
+## Personalizacion rapida
+
+- Informacion principal: `src/components/Hero.astro`
+- Experiencia: `src/components/Experience.astro`
+- Proyectos: `src/components/Projects.astro`
+- Estilos globales: `src/styles/global.css`
+- SEO base (title/description): `src/pages/index.astro`
+
+## Licencia
+
+No se ha definido una licencia en este repositorio.
+Si planeas distribuir o abrir este proyecto, agrega un archivo `LICENSE`.
