@@ -38,6 +38,15 @@ const PROJECTS = [
     tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.CSS, TAGS.NODE],
   },
   {
+    title: "LinkZap – Aplicación Web",
+    description:
+      "LinkZapWV es una app web sencilla que te ayuda a crear enlaces directos de WhatsApp (wa.me) en segundos. Solo eliges el prefijo del país, escribes el número y, si quieres, agregas un mensaje.",
+    links: "#",
+    github: "#",
+    image: "/projects/linkzapwv.webp",
+    tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.CSS],
+  },
+  {
     title: "Generador de Package.json – Aplicación Web",
     description:
       "Herramienta web creada para agilizar la configuración del archivo package.json en proyectos Node.js.",
@@ -53,7 +62,7 @@ const PROJECTS = [
   PROJECTS.map((project) => (
     <article class="max-w-sm">
       <img
-        class="rounded shadow-lg dark:shadow-white/10 light:shadow-black/10"
+        class="rounded shadow-lg dark:shadow-white/10 light:shadow-black/10 aspect-video object-cover"
         src={project.image}
         alt={`Captura de pantalla del proyecto ${project.image}`}
       />
